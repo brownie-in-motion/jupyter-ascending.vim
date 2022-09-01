@@ -27,6 +27,14 @@ function! jupyter_ascending#sync() abort
         \ )
 
   call s:execute(command_string)
+
+  let command_string_2 = printf(
+      \ "%s -m jupyter_ascending.requests.sync --filename '%s'",
+      \ g:jupyter_ascending_python_executable,
+      \ file_name
+      \ )
+
+  call s:execute(command_string_2)
 endfunction
 
 function! jupyter_ascending#execute() abort

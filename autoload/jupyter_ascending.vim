@@ -22,8 +22,7 @@ function! jupyter_ascending#sync() abort
   endif
 
   let command_string = printf(
-        \ "%s -m jupyter_ascending.requests.sync --filename '%s'",
-        \ g:jupyter_ascending_python_executable,
+        \ "jupytext --to ipynb '%s' --update",
         \ file_name
         \ )
 
